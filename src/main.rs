@@ -1,6 +1,6 @@
 pub mod constraints;
 
 fn main() {
-    let x = &*constraints::REMAPPED_WORDS;
+    let x = constraints::KAR;
     println!("{:#?}", x);
 }
