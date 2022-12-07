@@ -1,6 +1,8 @@
 pub mod constraints;
 
 fn main() {
-    let x = constraints::KAR;
-    println!("{:#?}", x);
+    println!(
+        "Test {}",
+        constraints::JSON_DATA["data"]["patterns"][0]["find"]
+    )
 }
