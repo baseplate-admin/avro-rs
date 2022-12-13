@@ -3,6 +3,8 @@ use crate::constraints;
 fn replace(string: &str) -> &str {
     let strings_to_vector: Vec<char> = string.chars().collect();
 
+    let mut new_bangla_vector_string: Vec<&str> = Vec::new();
+
     for character in strings_to_vector {
         let char = character.to_string();
         let mut replaced_word = constraints::REPLACE_PATTERNS.get(&*char);
@@ -15,10 +17,13 @@ fn replace(string: &str) -> &str {
                 replaced_word = constraints::REPLACE_PATTERNS.get(&*char.to_uppercase());
             }
         }
-
-        print!("{:?}", replaced_word);
-        break;
+        let replaced_value = *replaced_word.unwrap();
+        new_bangla_vector_string.push(replaced_value)
     }
+
+    let new_bangla_word = new_bangla_vector_string.join("");
+    print!("{}", new_bangla_word.as_str());
+
     return string;
 }
 
